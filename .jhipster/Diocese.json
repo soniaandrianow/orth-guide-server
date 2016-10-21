@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "church_diocese",
+            "otherEntityName": "church",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "diocese_church"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20161019150130",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "diocese",
+    "pagination": "no"
+}

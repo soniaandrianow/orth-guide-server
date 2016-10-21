@@ -1,0 +1,82 @@
+<div>
+    <h2>Churches</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="church.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Church
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Address</span></th>
+                    <th><span>Longitude</span></th>
+                    <th><span>Latitude</span></th>
+                    <th><span>Fete</span></th>
+                    <th><span>Dedication</span></th>
+                    <th><span>Parson</span></th>
+                    <th><span>Century</span></th>
+                    <th><span>Wooden</span></th>
+                    <th><span>Services</span></th>
+                    <th><span data-translate="orthGuideApp.church.short_history">Short History</span></th>
+                    <th><span data-translate="orthGuideApp.church.diocese_church">Diocese Church</span></th>
+                    <th><span data-translate="orthGuideApp.church.church_style">Church Style</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="church in vm.churches track by church.id">
+                    <td><a ui-sref="church-detail({id:church.id})">{{church.id}}</a></td>
+                    <td>{{church.address}}</td>
+                    <td>{{church.longitude}}</td>
+                    <td>{{church.latitude}}</td>
+                    <td>{{church.fete}}</td>
+                    <td>{{church.dedication}}</td>
+                    <td>{{church.parson}}</td>
+                    <td>{{church.century}}</td>
+                    <td>{{church.wooden}}</td>
+                    <td>{{church.services}}</td>
+                    <td>{{church.short_history}}</td>
+                    <td>
+                        <a ui-sref="diocese-detail({id:church.diocese_church.id})">{{church.diocese_church.name}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="style-detail({id:church.church_style.id})">{{church.church_style.name}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="church-detail({id:church.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="church.edit({id:church.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="church.delete({id:church.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

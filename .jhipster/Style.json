@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "style_church",
+            "otherEntityName": "church",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "church_style"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20161019151028",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "style",
+    "pagination": "no"
+}

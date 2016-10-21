@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Church.
+    -->
+    <changeSet id="20161019145057-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="diocese_church_id"
+                                 baseTableName="church"
+                                 constraintName="fk_church_diocese_church_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="diocese"/>
+
+        <addForeignKeyConstraint baseColumnNames="church_style_id"
+                                 baseTableName="church"
+                                 constraintName="fk_church_church_style_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="style"/>
+
+    </changeSet>
+</databaseChangeLog>
