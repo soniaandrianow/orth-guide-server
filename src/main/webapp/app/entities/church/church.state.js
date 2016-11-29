@@ -105,6 +105,7 @@
                                 wooden: false,
                                 services: null,
                                 short_history: null,
+                                photos: null,
                                 id: null
                             };
                         }

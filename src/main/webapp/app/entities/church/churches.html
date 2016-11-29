@@ -1,5 +1,5 @@
 <div>
-    <h2>Churches</h2>
+    <h2>Cerkwie</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
@@ -7,7 +7,7 @@
                 <button class="btn btn-primary" ui-sref="church.new" >
                     <span class="glyphicon glyphicon-plus"></span>
                     <span >
-                        Create new Church
+                        Dodaj nową cerkiew
                     </span>
                 </button>
             </div>
@@ -19,16 +19,17 @@
             <thead>
                 <tr>
                     <th><span>ID</span></th>
-                    <th><span>Address</span></th>
-                    <th><span>Longitude</span></th>
-                    <th><span>Latitude</span></th>
-                    <th><span>Fete</span></th>
+                    <!--<th><span>Address</span></th>-->
+                    <!--<th><span>Longitude</span></th>-->
+                    <!--<th><span>Latitude</span></th>-->
+                    <!--<th><span>Fete</span></th>-->
                     <th><span>Dedication</span></th>
-                    <th><span>Parson</span></th>
-                    <th><span>Century</span></th>
-                    <th><span>Wooden</span></th>
-                    <th><span>Services</span></th>
-                    <th><span data-translate="orthGuideApp.church.short_history">Short History</span></th>
+                    <!--<th><span>Parson</span></th>-->
+                    <!--<th><span>Century</span></th>-->
+                    <!--<th><span>Wooden</span></th>-->
+                    <!--<th><span>Services</span></th>-->
+                    <!--<th><span data-translate="orthGuideApp.church.short_history">Short History</span></th>-->
+                    <!--<th><span>Photos</span></th>-->
                     <th><span data-translate="orthGuideApp.church.diocese_church">Diocese Church</span></th>
                     <th><span data-translate="orthGuideApp.church.church_style">Church Style</span></th>
                     <th></th>
@@ -37,16 +38,17 @@
             <tbody>
                 <tr ng-repeat="church in vm.churches track by church.id">
                     <td><a ui-sref="church-detail({id:church.id})">{{church.id}}</a></td>
-                    <td>{{church.address}}</td>
+                    <!--<td>{{church.address}}</td>
                     <td>{{church.longitude}}</td>
                     <td>{{church.latitude}}</td>
-                    <td>{{church.fete}}</td>
+                    <td>{{church.fete}}</td>-->
                     <td>{{church.dedication}}</td>
-                    <td>{{church.parson}}</td>
+                   <!-- <td>{{church.parson}}</td>
                     <td>{{church.century}}</td>
                     <td>{{church.wooden}}</td>
-                    <td>{{church.services}}</td>
-                    <td>{{church.short_history}}</td>
+                    <td>{{church.services}}</td>-->
+                   <!-- <td>{{church.short_history}}</td>-->
+                    <!--<td>{{church.photos}}</td>-->
                     <td>
                         <a ui-sref="diocese-detail({id:church.diocese_church.id})">{{church.diocese_church.name}}</a>
                     </td>

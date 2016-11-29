@@ -89,6 +89,10 @@
             "fieldValidateRules": [
                 "required"
             ]
+        },
+        {
+            "fieldName": "photos",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20161019145057",

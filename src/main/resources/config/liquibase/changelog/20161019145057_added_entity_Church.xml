@@ -61,6 +61,10 @@
                 <constraints nullable="false" />
             </column>
             
+            <column name="photos" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
             <column name="diocese_church_id" type="bigint">
                 <constraints nullable="false" />
             </column>

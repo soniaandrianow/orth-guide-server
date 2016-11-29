@@ -70,6 +70,9 @@ public class ChurchResourceIntTest {
     private static final String DEFAULT_SHORT_HISTORY = "AAAAA";
     private static final String UPDATED_SHORT_HISTORY = "BBBBB";
 
+    private static final String DEFAULT_PHOTOS = "AAAAA";
+    private static final String UPDATED_PHOTOS = "BBBBB";
+
     @Inject
     private ChurchRepository churchRepository;
 
@@ -113,7 +116,8 @@ public class ChurchResourceIntTest {
                 .century(DEFAULT_CENTURY)
                 .wooden(DEFAULT_WOODEN)
                 .services(DEFAULT_SERVICES)
-                .short_history(DEFAULT_SHORT_HISTORY);
+                .short_history(DEFAULT_SHORT_HISTORY)
+                .photos(DEFAULT_PHOTOS);
         // Add required entity
         Diocese diocese_church = DioceseResourceIntTest.createEntity(em);
         em.persist(diocese_church);
@@ -158,6 +162,7 @@ public class ChurchResourceIntTest {
         assertThat(testChurch.isWooden()).isEqualTo(DEFAULT_WOODEN);
         assertThat(testChurch.getServices()).isEqualTo(DEFAULT_SERVICES);
         assertThat(testChurch.getShort_history()).isEqualTo(DEFAULT_SHORT_HISTORY);
+        assertThat(testChurch.getPhotos()).isEqualTo(DEFAULT_PHOTOS);
     }
 
     @Test
@@ -324,7 +329,8 @@ public class ChurchResourceIntTest {
                 .andExpect(jsonPath("$.[*].century").value(hasItem(DEFAULT_CENTURY)))
                 .andExpect(jsonPath("$.[*].wooden").value(hasItem(DEFAULT_WOODEN.booleanValue())))
                 .andExpect(jsonPath("$.[*].services").value(hasItem(DEFAULT_SERVICES.toString())))
-                .andExpect(jsonPath("$.[*].short_history").value(hasItem(DEFAULT_SHORT_HISTORY.toString())));
+                .andExpect(jsonPath("$.[*].short_history").value(hasItem(DEFAULT_SHORT_HISTORY.toString())))
+                .andExpect(jsonPath("$.[*].photos").value(hasItem(DEFAULT_PHOTOS.toString())));
     }
 
     @Test
@@ -347,7 +353,8 @@ public class ChurchResourceIntTest {
             .andExpect(jsonPath("$.century").value(DEFAULT_CENTURY))
             .andExpect(jsonPath("$.wooden").value(DEFAULT_WOODEN.booleanValue()))
             .andExpect(jsonPath("$.services").value(DEFAULT_SERVICES.toString()))
-            .andExpect(jsonPath("$.short_history").value(DEFAULT_SHORT_HISTORY.toString()));
+            .andExpect(jsonPath("$.short_history").value(DEFAULT_SHORT_HISTORY.toString()))
+            .andExpect(jsonPath("$.photos").value(DEFAULT_PHOTOS.toString()));
     }
 
     @Test
@@ -377,7 +384,8 @@ public class ChurchResourceIntTest {
                 .century(UPDATED_CENTURY)
                 .wooden(UPDATED_WOODEN)
                 .services(UPDATED_SERVICES)
-                .short_history(UPDATED_SHORT_HISTORY);
+                .short_history(UPDATED_SHORT_HISTORY)
+                .photos(UPDATED_PHOTOS);
 
         restChurchMockMvc.perform(put("/api/churches")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -398,6 +406,7 @@ public class ChurchResourceIntTest {
         assertThat(testChurch.isWooden()).isEqualTo(UPDATED_WOODEN);
         assertThat(testChurch.getServices()).isEqualTo(UPDATED_SERVICES);
         assertThat(testChurch.getShort_history()).isEqualTo(UPDATED_SHORT_HISTORY);
+        assertThat(testChurch.getPhotos()).isEqualTo(UPDATED_PHOTOS);
     }
 
     @Test

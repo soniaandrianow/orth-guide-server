@@ -4,7 +4,7 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myChurchLabel">Create or edit a Church</h4>
+        <h4 class="modal-title" id="myChurchLabel">Dodaj lub edytuj dane cerkwi</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
@@ -14,26 +14,26 @@
                     ng-model="vm.church.id" readonly />
         </div>
         <div class="form-group">
-            <label class="control-label" for="field_address">Address</label>
+            <label class="control-label" for="field_address">Adres</label>
             <input type="text" class="form-control" name="address" id="field_address"
                     ng-model="vm.church.address"
                     required />
             <div ng-show="editForm.address.$invalid">
                 <p class="help-block"
                     ng-show="editForm.address.$error.required">
-                    This field is required.
+                    Pole wymagane.
                 </p>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" for="field_longitude">Longitude</label>
+            <label class="control-label" for="field_longitude">Długość geograficzna</label>
             <input type="number" class="form-control" name="longitude" id="field_longitude"
                     ng-model="vm.church.longitude"
                     required min="-180.0" max="180.0" />
             <div ng-show="editForm.longitude.$invalid">
                 <p class="help-block"
                     ng-show="editForm.longitude.$error.required">
-                    This field is required.
+                    Pole wymagane.
                 </p>
                 <p class="help-block"
                     ng-show="editForm.longitude.$error.min" translate-value-min="-180.0">
@@ -45,101 +45,115 @@
                 </p>
                 <p class="help-block"
                     ng-show="editForm.longitude.$error.number">
-                    This field should be a number.
+                    To musi być liczba!
                 </p>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" for="field_latitude">Latitude</label>
+            <label class="control-label" for="field_latitude">Szerokość geograficzna</label>
             <input type="number" class="form-control" name="latitude" id="field_latitude"
                     ng-model="vm.church.latitude"
                      />
         </div>
         <div class="form-group">
-            <label class="control-label" for="field_fete">Fete</label>
+            <label class="control-label" for="field_fete">Święto parafialne</label>
             <input type="text" class="form-control" name="fete" id="field_fete"
                     ng-model="vm.church.fete"
                     required />
             <div ng-show="editForm.fete.$invalid">
                 <p class="help-block"
                     ng-show="editForm.fete.$error.required">
-                    This field is required.
+                    Pole wymagane.
                 </p>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" for="field_dedication">Dedication</label>
+            <label class="control-label" for="field_dedication">Wezwanie</label>
             <input type="text" class="form-control" name="dedication" id="field_dedication"
                     ng-model="vm.church.dedication"
                     required />
             <div ng-show="editForm.dedication.$invalid">
                 <p class="help-block"
                     ng-show="editForm.dedication.$error.required">
-                    This field is required.
+                    Pole wymagane.
                 </p>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" for="field_parson">Parson</label>
+            <label class="control-label" for="field_parson">Proboszcz</label>
             <input type="text" class="form-control" name="parson" id="field_parson"
                     ng-model="vm.church.parson"
                     required />
             <div ng-show="editForm.parson.$invalid">
                 <p class="help-block"
                     ng-show="editForm.parson.$error.required">
-                    This field is required.
+                    Pole wymagane.
                 </p>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" for="field_century">Century</label>
+            <label class="control-label" for="field_century">Wiek budowy</label>
             <input type="number" class="form-control" name="century" id="field_century"
                     ng-model="vm.church.century"
                     required />
             <div ng-show="editForm.century.$invalid">
                 <p class="help-block"
                     ng-show="editForm.century.$error.required">
-                    This field is required.
+                    Pole wymagane.
                 </p>
                 <p class="help-block"
                     ng-show="editForm.century.$error.number">
-                    This field should be a number.
+                    Pole musi być liczbą!
                 </p>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" for="field_wooden">Wooden</label>
+            <label class="control-label" for="field_wooden">Czy to cerkiew drewniana?</label>
             <input type="checkbox" class="form-control" name="wooden" id="field_wooden"
                     ng-model="vm.church.wooden"
                      />
             <div ng-show="editForm.wooden.$invalid">
                 <p class="help-block"
                     ng-show="editForm.wooden.$error.required">
-                    This field is required.
+                    Pole wymagane.
                 </p>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" for="field_services">Services</label>
-            <input type="text" class="form-control" name="services" id="field_services"
+            <label class="control-label" for="field_services">Nabożeństwa</label>
+           <!-- <input type="text" class="form-control" name="services" id="field_services"
                     ng-model="vm.church.services"
-                     />
+                     />-->
+            <textarea class="form-control" name="services" id="field_services" rows="5"
+                      ng-model="vm.church.services"/>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="orthGuideApp.church.short_history" for="field_short_history">Short History</label>
-            <input type="text" class="form-control" name="short_history" id="field_short_history"
+            <label class="control-label" data-translate="orthGuideApp.church.short_history" for="field_short_history">Krótka historia</label>
+            <!--<input type="text" class="form-control" name="short_history" id="field_short_history"
                     ng-model="vm.church.short_history"
-                    required />
+                    required />-->
+            <textarea class="form-control" name="short_history" id="field_short_history" rows="10"
+                   ng-model="vm.church.short_history"
+                   required />
             <div ng-show="editForm.short_history.$invalid">
                 <p class="help-block"
                     ng-show="editForm.short_history.$error.required">
-                    This field is required.
+                    Pole wymagane.
                 </p>
             </div>
         </div>
+        <div class="form-group">
+            <label class="control-label" for="field_photos">Linki do zdjęć</label>
+            <!--<input type="text" class="form-control" name="photos" id="field_photos"
+                    ng-model="vm.church.photos"
+                     />-->
+            <textarea class="form-control" name="photos" id="field_photos" rows="3"
+                   ng-model="vm.church.photos"
+            />
+        </div>
 
         <div class="form-group">
-            <label data-translate="orthGuideApp.church.diocese_church" for="field_diocese_church">Diocese Church</label>
+            <label data-translate="orthGuideApp.church.diocese_church" for="field_diocese_church">Diecezja</label>
             <select class="form-control" id="field_diocese_church" name="diocese_church" ng-model="vm.church.diocese_church" ng-options="diocese as diocese.name for diocese in vm.diocese track by diocese.id" required>
                 <option value=""></option>
             </select>
@@ -147,11 +161,11 @@
         <div ng-show="editForm.diocese_church.$invalid">
             <p class="help-block"
                 ng-show="editForm.diocese_church.$error.required">
-                This field is required.
+                Pole wymagane.
             </p>
         </div>
         <div class="form-group">
-            <label data-translate="orthGuideApp.church.church_style" for="field_church_style">Church Style</label>
+            <label data-translate="orthGuideApp.church.church_style" for="field_church_style">Styl architektoniczny</label>
             <select class="form-control" id="field_church_style" name="church_style" ng-model="vm.church.church_style" ng-options="style as style.name for style in vm.styles track by style.id" required>
                 <option value=""></option>
             </select>
@@ -159,16 +173,16 @@
         <div ng-show="editForm.church_style.$invalid">
             <p class="help-block"
                 ng-show="editForm.church_style.$error.required">
-                This field is required.
+                Pole wymagane.
             </p>
         </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
-            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Anuluj</span>
         </button>
         <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
-            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Zapisz</span>
         </button>
     </div>
 </form>

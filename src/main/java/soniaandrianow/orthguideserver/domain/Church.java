@@ -59,6 +59,9 @@ public class Church implements Serializable {
     @Column(name = "short_history", nullable = false)
     private String short_history;
 
+    @Column(name = "photos")
+    private String photos;
+
     @ManyToOne
     @NotNull
     private Diocese diocese_church;
@@ -205,6 +208,19 @@ public class Church implements Serializable {
         this.short_history = short_history;
     }
 
+    public String getPhotos() {
+        return photos;
+    }
+
+    public Church photos(String photos) {
+        this.photos = photos;
+        return this;
+    }
+
+    public void setPhotos(String photos) {
+        this.photos = photos;
+    }
+
     public Diocese getDiocese_church() {
         return diocese_church;
     }
@@ -265,6 +281,7 @@ public class Church implements Serializable {
             ", wooden='" + wooden + "'" +
             ", services='" + services + "'" +
             ", short_history='" + short_history + "'" +
+            ", photos='" + photos + "'" +
             '}';
     }
 }
